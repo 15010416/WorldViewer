@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SeparatorMenuItem?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.paint.LinearGradient?>
+<?import javafx.scene.paint.Stop?>
+<?import javafx.scene.shape.Rectangle?>
+
+<VBox prefHeight="400.0" prefWidth="640.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1">
+  <children>
+    <MenuBar VBox.vgrow="NEVER">
+      <menus>
+        <Menu mnemonicParsing="false" text="File">
+          <items>
+            <MenuItem mnemonicParsing="false" text="New" />
+            <MenuItem mnemonicParsing="false" text="Open…" />
+            <Menu mnemonicParsing="false" text="Open Recent" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Close" />
+            <MenuItem mnemonicParsing="false" text="Save" />
+            <MenuItem mnemonicParsing="false" text="Save As…" />
+            <MenuItem mnemonicParsing="false" text="Revert" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Preferences…" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Quit" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Edit">
+          <items>
+            <MenuItem mnemonicParsing="false" text="Undo" />
+            <MenuItem mnemonicParsing="false" text="Redo" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Cut" />
+            <MenuItem mnemonicParsing="false" text="Copy" />
+            <MenuItem mnemonicParsing="false" text="Paste" />
+            <MenuItem mnemonicParsing="false" text="Delete" />
+            <SeparatorMenuItem mnemonicParsing="false" />
+            <MenuItem mnemonicParsing="false" text="Select All" />
+            <MenuItem mnemonicParsing="false" text="Unselect All" />
+          </items>
+        </Menu>
+        <Menu mnemonicParsing="false" text="Help">
+          <items>
+            <MenuItem mnemonicParsing="false" text="About MyHelloApp" />
+          </items>
+        </Menu>
+            <Menu fx:id="ICWorld" mnemonicParsing="false" text="ICWorld">
+              <items>
+                <MenuItem fx:id="ICWorld" mnemonicParsing="false" text="ICWorld" />
+              </items>
+            </Menu>
+      </menus>
+    </MenuBar>
+    <AnchorPane maxHeight="-1.0" maxWidth="-1.0" prefHeight="-1.0" prefWidth="-1.0" VBox.vgrow="ALWAYS">
+      <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" height="375.0" stroke="BLACK" strokeType="INSIDE" width="640.0">
+               <fill>
+                  <LinearGradient endX="1.0" endY="1.0">
+                     <stops>
+                        <Stop color="#ff6c1f" />
+                        <Stop color="WHITE" offset="1.0" />
+                     </stops>
+                  </LinearGradient>
+               </fill>
+            </Rectangle>
+            <Button fx:id="PutDownButton" layoutX="14.0" layoutY="140.0" mnemonicParsing="false" onAction="#pressButton" text="Put down item" />
+            <ImageView fx:id="imageView" fitHeight="300.0" fitWidth="397.0" layoutX="122.0" layoutY="25.0" onContextMenuRequested="#doStartNewWorld" pickOnBounds="true" preserveRatio="true" />
+            <ImageView fx:id="itemView" fitHeight="150.0" fitWidth="106.0" layoutX="520.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" />
+            <Button fx:id="PickUpButton" layoutX="20.0" layoutY="100.0" mnemonicParsing="false" onAction="#pressPickUpButton" text="Pick up item" />
+            <Button fx:id="LeftButton" layoutX="195.0" layoutY="337.0" mnemonicParsing="false" onAction="#pressLeftButton" text="Go Left" />
+            <Button fx:id="RightButton" layoutX="380.0" layoutY="337.0" mnemonicParsing="false" onAction="#pressRightButton" text="Go Right" />
+            <Button fx:id="ForwardButton" layoutX="279.0" layoutY="337.0" mnemonicParsing="false" onAction="#pressForwardButton" text="Go Forwards" />
+            <TextField fx:id="MessageField" layoutY="2.0" onAction="#updateMessageField" prefHeight="25.0" prefWidth="640.0" promptText="MessageField" />
+            <ChoiceBox fx:id="ItemsCarried" layoutX="14.0" layoutY="46.0" prefHeight="25.0" prefWidth="94.0" />
+      </children>
+    </AnchorPane>
+  </children>
+</VBox>
